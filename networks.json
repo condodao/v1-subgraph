@@ -1,0 +1,8 @@
+{
+  "scroll-sepolia": {
+    "CondoManager": {
+      "address": "0x16fB02E94f738Cf9659550Eb2059F55B26238315",
+      "startBlock": 4880632
+    }
+  }
+}

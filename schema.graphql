@@ -1,0 +1,121 @@
+type ApartAdded @entity(immutable: true) {
+  id: Bytes!
+  apartId: BigInt! # uint256
+  buyerId: BigInt! # uint256
+  condoId: BigInt! # uint256
+  tokenId: BigInt! # uint256
+  floorNumber: BigInt! # uint256
+  apartmentNumber: BigInt! # uint256
+  price: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CondoAdded @entity(immutable: true) {
+  id: Bytes!
+  condoId: BigInt! # uint256
+  creatorId: BigInt! # uint256
+  tokenAddress: Bytes! # address
+  timelock: Bytes! # address
+  governor: Bytes! # address
+  vault: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CondoUpdated @entity(immutable: true) {
+  id: Bytes!
+  condoId: BigInt! # uint256
+  status: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RatingAdded @entity(immutable: true) {
+  id: Bytes!
+  ratingId: BigInt! # uint256
+  ratedUserId: BigInt! # uint256
+  raterUserId: BigInt! # uint256
+  isPositive: Boolean! # bool
+  comment: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RatingUpdated @entity(immutable: true) {
+  id: Bytes!
+  ratingId: BigInt! # uint256
+  isPositive: Boolean! # bool
+  comment: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RentAdded @entity(immutable: true) {
+  id: Bytes!
+  rentId: BigInt! # uint256
+  shareId: BigInt! # uint256
+  renterId: BigInt! # uint256
+  balance: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RentUpdated @entity(immutable: true) {
+  id: Bytes!
+  rentId: BigInt! # uint256
+  balance: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ShareAdded @entity(immutable: true) {
+  id: Bytes!
+  shareId: BigInt! # uint256
+  tokenId: BigInt! # uint256
+  renterId: BigInt! # uint256
+  pricePerBlock: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ShareUpdated @entity(immutable: true) {
+  id: Bytes!
+  shareId: BigInt! # uint256
+  pricePerBlock: BigInt! # uint256
+  isActive: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserAdded @entity(immutable: true) {
+  id: Bytes!
+  userId: BigInt! # uint256
+  wallet: Bytes! # address
+  name: String! # string
+  description: String! # string
+  image: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserUpdated @entity(immutable: true) {
+  id: Bytes!
+  userId: BigInt! # uint256
+  name: String! # string
+  description: String! # string
+  image: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
